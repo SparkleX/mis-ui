@@ -44,35 +44,26 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
 	props: {
 		source: String,
 	},
 	data: () => ({
 		drawer: null,
-		menu: [
-			{
-				name:"Administration",
-				items:[
-					{icon:"mdi-home",label:"Home",link:"/"},
-					{icon:"mdi-face",label:"Business Partner",link:"/"},
-					{icon:"mdi-dns",label:"Items",link:"/"},
-				]
-			},
-			{
-				name:"Sales - AR",
-				items:[
-					{icon:"mdi-format-indent-increase ",label:"Sales Order",link:"/SalesOrder"}
-				]
-			}
-
-		]
+		menu: null
 	}),
 	methods:{
 		onMenuSelect : function (evt) {
 			this.$router.push({ path: evt});
 		}
-	}
+	},
+	async mounted () {
+		//axios.get('/apis/test.json').then(response => (this.menu = response.data));
+		var data = await axios.get('/apis/test.json');
+		this.menu = data.data;
+	}	
 }
 </script>
 
