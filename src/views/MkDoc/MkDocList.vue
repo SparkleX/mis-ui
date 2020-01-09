@@ -16,9 +16,13 @@
 </template>
 
 <script>
+import ListBase from "@/share/views/BaseListView.vue"
+
 export default {
+	mixins: [ListBase],
 	data () {
 		return {
+			$$object:"SalesOrder",
 		singleSelect: false,
 		selected: [],
 		headers: [
@@ -119,11 +123,11 @@ export default {
 		}
 	},
 	methods: {
-		onRowClick : function () {
+		/*onRowClick : function () {
 			//alert(evt);
 			var id = 1;
 			this.$router.push({ path: `/SalesOrder/${id}`});
-		}
+		}*/
 	}
 }
 </script>
