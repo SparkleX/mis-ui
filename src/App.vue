@@ -2,23 +2,21 @@
 	<v-app id="inspire">
 		<v-navigation-drawer v-model="drawer" app>
 			<v-list dense  v-for="(group) in menu" v-bind:key="group">
-<v-list-group>
-        <template v-slot:activator >
-          <v-list-item-title>{{group.name}}</v-list-item-title>
-        </template>
-				<v-list-item link @click="onMenuSelect(e.link)" v-for="(e) in group.items" v-bind:key="e">
-					<v-list-item-action>
-						<v-icon>{{e.icon}}</v-icon>
-					</v-list-item-action>
-					<v-list-item-content>
-						<v-list-item-title>
-							{{e.label}}
-						</v-list-item-title>
-					</v-list-item-content>
-				</v-list-item>
-</v-list-group>				
-
-
+				<v-list-group>
+						<template v-slot:activator >
+							<v-list-item-title>{{group.name}}</v-list-item-title>
+						</template>
+						<v-list-item link @click="onMenuSelect(e.link)" v-for="(e) in group.items" v-bind:key="e">
+							<v-list-item-action>
+								<v-icon>{{e.icon}}</v-icon>
+							</v-list-item-action>
+							<v-list-item-content>
+								<v-list-item-title>
+									{{e.label}}
+								</v-list-item-title>
+							</v-list-item-content>
+						</v-list-item>
+				</v-list-group>
 			</v-list>
 		</v-navigation-drawer>
 
@@ -28,7 +26,7 @@
       dark
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-toolbar-title>Application</v-toolbar-title>
+      <v-toolbar-title>Enterprise Management System</v-toolbar-title>
     </v-app-bar>
 
     <v-content>
@@ -68,12 +66,5 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>

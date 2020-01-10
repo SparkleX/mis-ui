@@ -21,6 +21,9 @@ import CrudBar from "@/share/components/detail/CrudBar"
 Vue.component('s-crud-bar', CrudBar);
 Vue.use(CrudBar);
 
+import ListView from "@/share/views/ListView"
+Vue.component('s-list-view', ListView);
+Vue.use(ListView);
 
 import BaseDetailView from "@/share/views/BaseDetailView.vue"
 Vue.component('base-detail-view', BaseDetailView);

@@ -15,7 +15,7 @@
 			{
 				"icon": "mdi-dns",
 				"label": "Items",
-				"link": "/"
+				"link": "/Item"
 			}
 		]
 	},

@@ -10,11 +10,21 @@
 import * as ViewUtil from "./ViewUtil"
 export default {
 	props: { 
-		//formMode: {type: String,default: "viewMode"}
 	},
 	data : function(){
 		return {
 			formMode: "viewMode"
+		}
+	},
+	computed: {
+		addMode : function () {
+			return this.formMode == "addMode";
+		},
+		editMode : function () {
+			return this.formMode == "editMode";
+		},
+		viewMode : function () {
+			return this.formMode == "viewMode";
 		}
 	},
 	methods: {
@@ -44,7 +54,16 @@ export default {
 				document.getElementById("idCancel").hidden=true;
 				document.getElementById("idEdit").hidden=false;
 			}			
-		}		
+		},
+		setFormMode : function (val) {
+			this.formMode = val;
+		}
+	},
+	mounted() {
+		if(this.$route.params.id=="undefined") {
+			this.formMode = "addMode";
+		}
 	}
+
 }
 </script>

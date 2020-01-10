@@ -26,6 +26,18 @@ const routes = [
 			import("@/views/MkDoc/MkDocList.vue")
 	},
 	{
+		path: "/Item",
+		name: "ItemList",
+		component: () => 
+			import("@/views/Item/ItemList.vue")
+	},
+	{
+		path: "/Item/:id",
+		name: "ItemDetail",
+		component: () => 
+			import("@/views/Item/ItemDetail.vue")
+	},		
+	{
 		path: "/SalesOrder/:id",
 		name: "SalesOrderDetail",
 		component: () =>
